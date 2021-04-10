@@ -4,9 +4,9 @@ sh_dic_customer = ["国民", "人々", "取引先", "顧客", "お客", "クラ�
                    "ファン", "企業様", "利用者", "オーナー", "入居者", "不動産所有者", "患者", "施主", "工事業者", "旅行者"]
 sh_dic_share = ["株主", "ストックホルダー", "出資者", "投資家"]
 sh_dic_staff = ["従業員", "社員", "メンバー", "スタッフ", "クルー", "働く人"]
-sh_dic_community = ["地球", "社会", "地域", "共同体", "コミュニティ", "自治体"]
+sh_dic_community = ["地球", "社会", "地域", "共同体", "コミュニティ", "自治体", "ＳＤＧｓ", "人類"]
 
-IS_data = pd.DataFrame(pd.read_excel(r"C:\Users\Ray94\Desktop/input.xlsx"))  # 経営理念記載の作業用excelを読み込む（全社分）
+IS_data = pd.DataFrame(pd.read_excel(r"C:\Users\Ray94\Downloads\結果＿ステークホルダー言及順.xlsx"))  # 経営理念記載の作業用excelを読み込む（全社分）
 Item_value = IS_data.loc[:, ['記載内容']].values.tolist()  # 経営理念記載の列を用意する（全社分）
 for Items in Item_value:  # 行/会社ごとに分析する。会社数の分だけ以下の処理を繰り返す
     for Philosophy in Items:  # 経営理念の文字を取り出す（一社分）
@@ -62,4 +62,4 @@ for Items in Item_value:  # 行/会社ごとに分析する。会社数の分だ
         final = [final]
         print(final)
         Item = pd.DataFrame(final)
-        Item.to_csv(r"C:\\Users\Ray94\Desktop/222.csv", mode='a', index=False, header=None)
+        Item.to_csv(r"C:\Users\Ray94\Downloads\111.csv", mode='a', index=False, header=None)
